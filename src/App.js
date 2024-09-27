@@ -141,31 +141,173 @@
 // };
 // export default App;
 
-import React, { useState, useEffect } from 'react';
+// import React, { useState, useEffect } from 'react';
 
-const App = () => {
-  const [users, setUsers] = useState([]);
+// const App = () => {
+//   const [users, setUsers] = useState([]);
 
-  useEffect(() => {
-    fetch('(link unavailable)')
-      .then(response => response.json())
-      .then(json => setUsers(json));
-  }, []);
+//   useEffect(() => {
+//     fetch('(link unavailable)')
+//       .then(response => response.json())
+//       .then(json => setUsers(json));
+//   }, []);
 
-  return (
-    <div>
-      <h2>React is a popular JavaScript library for building user interfaces and can be used for developing complex, interactive web and mobile applications.
-      </h2>
-      {users.map((user) => (
-        <div key={('https://jsonplaceholder.typicode.com/users')}>
-          <h3>{user.name}</h3>
-          <p>{user.email}</p>
+//   return (
+//     <div>
+//       <h2>React is a popular JavaScript library for building user interfaces and can be used for developing complex, interactive web and mobile applications.
+//       </h2>
+//       {users.map((user) => (
+//         <div key={('https://jsonplaceholder.typicode.com/users')}>
+//           <h3>{user.name}</h3>
+//           <p>{user.email}</p>
+//         </div>
+//       ))}
+//     </div>
+//   );
+// };
+
+// export default App;
+
+// import React, { useState, useEffect } from 'react';
+
+// const App = () => {
+//   const [users, setUsers] = useState([]);
+
+//   useEffect(() => {
+//     fetch('(link unavailable)')
+//       .then(response => response.json())
+//       .then(json => setUsers(json));
+//   }, []);
+
+//   return (
+//     <div>
+//       <h2>React is a popular JavaScript library for building user interfaces and can be used for developing complex, interactive web and mobile applications.
+//       </h2>
+//       {users.map((user) => (
+//         <div key={('https://jsonplaceholder.typicode.com/users')}>
+//           <h3>{user.name}</h3>
+//           <p>{user.email}</p>
+//         </div>
+//       ))}
+//     </div>
+//   );
+// };
+
+// export default App;
+ 
+// import React from "react";
+// import Navbar from "./Navbar";
+
+
+// const App = () => {
+//   return (
+//     <div>
+      
+//         <Navbar />
+//         <center>
+//         <h2>welcome to the home page</h2>
+//         <button>submit</button>
+//         </center>
+
+      
+//     </div>
+//   );
+// };
+
+// export default App;
+  
+
+// import React from "react";
+// import ReactLogo from  './5img.jpg';
+
+// const App= () => {
+//     return (
+//         <div>
+//       <center>
+//         <img src={ReactLogo} height="250" width="auto"/>
+//         <h2>Nature's beauty inspires us, calms us, and reminds us of the world's incredible diversity
+//         1. Creativity: Nature's vibrant colors, patterns, and shapes spark artistic expression.
+//            2. Imagination: Landscapes, textures, and sounds evoke stories and ideas.
+//           3. Innovation: Biomimicry and nature-inspired solutions drive technological advancements.
+//        </h2>
+//       </center>
+
+//         </div>
+//     )
+// }
+//  export default App;
+  
+// import React from "react";
+// import AudioFile from './hero-mass-entry'
+
+// const App= () => {
+//   return (
+//     <div>
+//       <center>
+//         <audio controls>
+//           <source src={AudioFile} type="audio/ogg" />
+//         </audio>
+//       </center>
+//     </div>
+//   );
+// };
+// export default App;
+
+
+  
+// import React from "react";
+// import VideoFile from './video.mp4';
+
+// const App= () => {
+//   return (
+//     <div>
+//       <center>
+//        <video width="" height="" controls>
+//         <source src ={VideoFile} type="video/mp4" />
+//        </video>
+//       </center>
+//     </div>
+//   );
+// };
+// export default App;
+
+
+
+//  import React,{useState} from "react"; 
+ 
+
+
+
+
+//  const App = () => {
+//   const [search,setsearch]= useState('');
+//    return (
+//     <div>
+//     <center>
+//      <h4>Enter your city </h4>   
+//    <input type="text " />
+//     {/* //  value={search}
+//     //  onChange={(e) => setsearch(e.target.value)}/>      
+//     //  <br />
+//     //  {Data.map(city =><li>{city.name}</li>)} */}
+    
+//     </center>
+
+//        </div>
+//      )
+//  }
+//   export default App;
+
+
+import React from "react";
+import Hoc from "./Hoc";
+
+const App= () => {
+    return (
+        <div>
+      <h2>welcome user!!</h2>
+
         </div>
-      ))}
-    </div>
-  );
-};
-
-export default App;
-
-
+    )
+}
+ export default Hoc (App)
