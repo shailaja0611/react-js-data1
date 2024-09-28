@@ -299,15 +299,24 @@
 //   export default App;
 
 
+// import React from "react";
+// import Hoc from "./Hoc";
+
+// const App= () => {
+//     return (
+//         <div>
+//       <h2>welcome user!!</h2>
+
+//         </div>
+//     )
+// }
+//  export default Hoc (App)
 import React from "react";
-import Hoc from "./Hoc";
-
-const App= () => {
-    return (
-        <div>
-      <h2>welcome user!!</h2>
-
-        </div>
+import Rediobutton from './Rediobutton'
+ 
+const App = () => {
+    return(
+        <Rediobutton />
     )
 }
- export default Hoc (App)
+export default App;
