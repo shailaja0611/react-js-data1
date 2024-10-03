@@ -311,12 +311,146 @@
 //     )
 // }
 //  export default Hoc (App)
-import React from "react";
-import Rediobutton from './Rediobutton'
+// import React from "react";
+// import Rediobutton from './Rediobutton'
  
+// const App = () => {
+//     return(
+//         <Rediobutton />
+//     )
+// }
+// export default App;
+
+// src/App.js
+// import React from 'react';
+// import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+// import Home1 from './components/Home1';
+// import Analytics from './components/Analytics';
+// import ManageUrls from './components/ManageUrls';
+// import UserProfile from './components/UserProfile';
+
+// const App = () => {
+//   return (
+//     <Router>
+//       <div>
+//         <Switch>
+//           <Route path="/" exact component={Home} />
+//           <Route path="/analytics" component={Analytics} />
+//           <Route path="/manage" component={ManageUrls} />
+//           <Route path="/profile" component={UserProfile} />
+//         </Switch>
+//       </div>
+//     </Router>
+//   );
+// };
+
+// export default App;
+
+
+//  import React from "react";
+//  import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+//  import Home1 from "./container/Home1";
+//  import Analytics from "./container/Analytics";
+//  import ManageUrls from "./container/ManageUrls";
+// import UserProfile from "./container/UserProfile";
+   
+//  const App = () => {
+//     return (
+//         <Router>
+//             <div>
+//                 <Switch>
+//                     <Route path="/"exact container={Home1} />
+//                     <Route path="/anlaytics" container={Analytics} />
+//                     <Route path="/manage" container={ManageUrls} />
+//                     <Route path="/profile" container={UserProfile} />
+//                 </Switch>
+//             </div>
+//         </Router>
+//     )
+//  }
+//  export default App;
+
+// import React from 'react';
+// import Counter from './counter';
+
+
+// function App() {
+//   return (
+//     <div>
+//       <Counter />
+//     </div>
+//   );
+// }
+
+// export default App
+// import React from 'react';
+// import RealTimeInput from './RealTimeInput';
+
+// const App = () => {
+//   return (
+//     <div>
+//       <RealTimeInput />
+//     </div>
+//   );
+// };
+
+// export default App;
+
+// import React from 'react';
+// import ToggleSwitch from './ToggleSwitch';
+
+// const App = () => {
+//   return (
+//     <div style={{ padding: '20px' }}>
+//       <h1>Toggle Switch Example</h1>
+//       <ToggleSwitch />
+//     </div>
+//   );
+// };
+
+// export default App;
+// import React from 'react';
+// import DataFetchComponent from './DataFetchComponent';
+
+// const App = () => {
+//   return (
+//     <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif' }}>
+//       <h1>API Data Fetch Example</h1>
+//       <DataFetchComponent />
+//     </div>
+//   );
+// };
+
+// export default App;
+
+// import React from 'react';
+
+// import Calculator from './Calculator';
+
+// const App = () => {
+// return (
+//   <div >
+//     <center>  Calculator </center>
+    
+//     <center/>
+//   <Calculator />
+//   </div>
+// );
+// };
+
+// export default App;
+
+import React from 'react';
+import Listcomponent from './Listcomponent ';
+
+
+
 const App = () => {
-    return(
-        <Rediobutton />
-    )
-}
+return (
+  <div >
+   <Listcomponent /> 
+</div>
+);
+};
+
 export default App;
