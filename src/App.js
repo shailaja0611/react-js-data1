@@ -440,17 +440,87 @@
 
 // export default App;
 
-import React from 'react';
-import Listcomponent from './Listcomponent ';
+// import React from 'react';
+// import Listcomponent from './Listcomponent ';
 
 
 
-const App = () => {
-return (
-  <div >
-   <Listcomponent /> 
-</div>
-);
-};
+// const App = () => {
+// return (
+//   <div >
+//    <Listcomponent /> 
+// </div>
+// );
+// };
+
+// export default App;
+
+// import React from 'react';
+// import Timer from './Timer';
+
+// function App() {
+//   return (
+//     <div>
+//       <Timer />
+//     </div>
+//   );
+// }
+
+// export default App;
+
+//  import React from "react";
+//  import Dynamic from "./Dynamic"; 
+
+//  function App() {
+//   return (
+//     <div>
+//      <Dynamic />
+//    </div>
+//    );
+//  }
+
+//  export default App;
+
+
+// import React from "react";
+// import Routing from "./Routing";
+
+// function App() {
+//   return (
+//     <div>
+//       <Routing />
+//     </div>
+//   );
+// }
+
+// export default App;
+
+// import React from "react";
+// import QuoteGenerator from "./QuoteGenerator";
+
+
+// function App() {
+//   return (
+//     <div>
+//       <QuoteGenerator />
+//     </div>
+//   );
+// }
+
+// export default App;
+
+import React from "react";
+import FileUploader from "./FileUploader";
+
+
+function App() {
+ return (
+   <div>
+    <FileUploader />
+  </div>
+  );
+}
 
 export default App;
+
+
