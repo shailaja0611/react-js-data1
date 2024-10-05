@@ -509,18 +509,62 @@
 
 // export default App;
 
+// import React from "react";
+// import FileUploader from "./FileUploader";
+
+
+// function App() {
+//  return (
+//    <div>
+//     <FileUploader />
+//   </div>
+//   );
+// }
+
+// export default App;
+
+
+// import React from "react";
+// import Authentication from './Authentication'
+
+// function App() {
+//  return (
+//    <div>
+//      <Authentication />
+//   </div>
+//  );
+// }
+
+
+// export default App;
+
 import React from "react";
-import FileUploader from "./FileUploader";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./Home";
+import Contact from "./Contact";
+import Navbar from "./Navbar"
+import Course from "./Course";
+import About from "./About";
+import './App.css'
 
 
 function App() {
- return (
-   <div>
-    <FileUploader />
-  </div>
+  return (
+    <div className="App">
+      <BrowserRouter>
+        <Navbar />
+
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/contact" element={<Contact />}></Route>
+          <Route path="/course" element={<Course />}></Route>
+          <Route path="/about" element={<About />}></Route>
+          
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 }
 
 export default App;
-
 
