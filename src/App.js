@@ -538,33 +538,96 @@
 
 // export default App;
 
-import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "./Home";
-import Contact from "./Contact";
-import Navbar from "./Navbar"
-import Course from "./Course";
-import About from "./About";
-import './App.css'
+// import React from "react";
+// import { BrowserRouter, Route, Routes } from "react-router-dom";
+// import Home from "./Home";
+// import Contact from "./Contact";
+// import Navbar from "./Navbar"
+// import Course from "./Course";
+// import About from "./About";
+// import './App.css'
 
 
-function App() {
-  return (
-    <div className="App">
-      <BrowserRouter>
-        <Navbar />
+// function App() {
+//   return (
+//     <div className="App">
+//       <BrowserRouter>
+//         <Navbar />
 
-        <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/contact" element={<Contact />}></Route>
-          <Route path="/course" element={<Course />}></Route>
-          <Route path="/about" element={<About />}></Route>
+//         <Routes>
+//           <Route path="/" element={<Home />}></Route>
+//           <Route path="/contact" element={<Contact />}></Route>
+//           <Route path="/course" element={<Course />}></Route>
+//           <Route path="/about" element={<About />}></Route>
           
-        </Routes>
-      </BrowserRouter>
-    </div>
-  );
-}
+//         </Routes>
+//       </BrowserRouter>
+//     </div>
+//   );
+// }
+
+// export default App;
+
+// import React from 'react';
+// import DragDropList from './DragDropList';
+
+// const App = () => {
+//     return (
+//         <div>
+//             <h1>Drag and Drop Example</h1>
+//             <DragDropList />
+//         </div>
+//     );
+// };
+
+// export default App;
+
+// src/App.js
+// import React from 'react';
+// import ImageCarousel from './ImageCarousel';
+
+// const App = () => {
+//     return (
+//         <div>
+            
+//             <h1>Image Carousel</h1>
+//             <ImageCarousel />
+            
+//         </div>
+//     );
+// };
+
+// export default App;
+
+
+// src/App.js
+
+// import React from 'react';
+// import MultiStepForm from './MultiStepForm';
+
+// const App = () => {
+//     return (
+//         <div>
+//             <MultiStepForm />
+//         </div>
+//     );
+// };
+
+// export default App;
+
+// src/App.js
+import React from 'react';
+import Pagination from './Pagination';
+
+
+const App = () => {
+    return (
+        <div>
+            <Pagination />
+        </div>
+    );
+};
 
 export default App;
+
 
