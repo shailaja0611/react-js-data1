@@ -616,18 +616,86 @@
 // export default App;
 
 // src/App.js
-import React from 'react';
-import Pagination from './Pagination';
+// import React from 'react';
+// import Pagination from './Pagination';
 
+
+// const App = () => {
+//     return (
+//         <div>
+//             <Pagination />
+//         </div>
+//     );
+// };
+
+// export default App;
+
+// import React from 'react';
+// import ColorPicker from './ColorPicker';
+
+// const App = () => {
+//   return (
+//     <div>
+//         <h1>ColorPicker</h1>
+//       <ColorPicker />
+//     </div>
+//   );
+// };
+
+// export default App;
+
+// import React, { useState } from 'react';
+// import './App.css';
+
+// const App = () => {
+//   const [isOpen, setIsOpen] = useState(false);
+
+//   const toggleMenu = () => {
+//     setIsOpen(!isOpen);
+//   };
+
+//   return (
+//     <div>
+//       <nav>
+//         <div className="logo">MyApp</div>
+//         <div className="hamburger" onClick={toggleMenu}>
+//           &#9776;
+//         </div>
+//         <ul className={`nav-list ${isOpen ? 'active' : ''}`}>
+//           <li><a href="#home">Home</a></li>
+//           <li><a href="#about">About</a></li>
+//           <li><a href="#services">Services</a></li>
+//           <li><a href="#contact">Contact</a></li>
+//         </ul>
+//       </nav>
+//     </div>
+//   );
+// };
+
+// export default App;
+
+
+// import React from "react";
+
+// function App() {
+//   return (
+//     <div>
+//     <h1>Home</h1>
+//     </div>
+//   )
+// }
+// export default App
+
+import React from 'react';
+import ShoppingCart from './ShoppingCart';
 
 const App = () => {
-    return (
-        <div>
-            <Pagination />
-        </div>
-    );
+  return (
+    <div style={{ maxWidth: '600px', margin: '0 auto', padding: '20px' }}>
+      <h1>My Shopping Cart</h1>
+      <ShoppingCart />
+    </div>
+  );
 };
 
 export default App;
-
-
