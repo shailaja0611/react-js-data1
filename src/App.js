@@ -686,14 +686,52 @@
 // }
 // export default App
 
+// import React from 'react';
+// import ShoppingCart from './ShoppingCart';
+
+// const App = () => {
+//   return (
+//     <div style={{ maxWidth: '600px', margin: '0 auto', padding: '20px' }}>
+//       <h1>Dynamic Price Calculation</h1>
+//       <ShoppingCart />
+//     </div>
+//   );
+// };
+
+// export default App;
+
+// import React from 'react';
+// import './App.css'; 
+// import ShoppingCart1 from './ShoppingCart1';
+// import CheckoutForm from './CheckoutForm';
+
+//  const App = () => {
+//     return (
+//         <div className="app-container">
+//             <header className="app-header">
+//                 <h1>Local Storage Persistence</h1>
+//             </header>
+//             <main>
+//                 <ShoppingCart1 />
+//                 <CheckoutForm />
+//             </main>
+//             <footer className="app-footer">
+//                 <p>&copy; 2024 My Shop</p>
+//             </footer>
+//         </div>
+//     );
+// };
+
+// export default App;
+
 import React from 'react';
-import ShoppingCart from './ShoppingCart';
+import Cart from './Cart';
 
 const App = () => {
   return (
-    <div style={{ maxWidth: '600px', margin: '0 auto', padding: '20px' }}>
-      <h1>My Shopping Cart</h1>
-      <ShoppingCart />
+    <div style={{ textAlign: 'center', marginTop: '20%' }}>
+      <h1>My Shop</h1>
+      <Cart />
     </div>
   );
 };
