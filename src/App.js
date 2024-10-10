@@ -724,16 +724,63 @@
 
 // export default App;
 
-import React from 'react';
-import Cart from './Cart';
+// import React from 'react';
+// import Cart from './Cart';
 
-const App = () => {
+// const App = () => {
+//   return (
+//     <div style={{ textAlign: 'center', marginTop: '20%' }}>
+//       <h1>My Shop</h1>
+//       <Cart />
+//     </div>
+//   );
+// };
+
+// export default App;
+
+// import React, { useState } from 'react';
+// import OrderSummary from './OrderSummary';
+// import PaymentForm from './PaymentForm';
+
+// const App = () => {
+//   const [paymentSuccessful, setPaymentSuccessful] = useState(false);
+  
+//   const items = [
+//     { name: 'Product 1', price: 29.99, quantity: 2 },
+//     { name: 'Product 2', price: 15.00, quantity: 1 },
+//     { name: 'Product 3', price: 9.99, quantity: 3 },
+//   ];
+
+//   const total = items.reduce((acc, item) => acc + item.price * item.quantity, 0).toFixed(2);
+
+//   const handlePaymentSuccess = () => {
+//     setPaymentSuccessful(true);
+//   };
+
+//   return (
+//     <div>
+//       <h1>Your Shopping Cart</h1>
+//       <OrderSummary items={items} total={total} />
+//       {!paymentSuccessful ? (
+//         <PaymentForm total={total} onPaymentSuccess={handlePaymentSuccess} />
+//       ) : (
+//         <h2>Thank you for your payment!</h2>
+//       )}
+//     </div>
+//   );
+// };
+
+// export default App;
+import React from 'react';
+import ShoppingCart2 from './ShoppingCart2';
+
+
+function App() {
   return (
-    <div style={{ textAlign: 'center', marginTop: '20%' }}>
-      <h1>My Shop</h1>
-      <Cart />
+    <div className="App">
+      <ShoppingCart2 />
     </div>
   );
-};
+}
 
-export default App;
+export default App;
