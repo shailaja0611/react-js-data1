@@ -771,16 +771,239 @@
 // };
 
 // export default App;
+// import React from 'react';
+// import ShoppingCart2 from './ShoppingCart2';
+
+
+// function App() {
+//   return (
+//     <div className="App">
+//       <ShoppingCart2 />
+//     </div>
+//   );
+// }
+
+// export default App;
+
+// import React from 'react';
+
+// import Management from './Management';
+
+// const App = () => {
+//     return (
+//         <Router>
+//             <div>
+//                 <header>
+//                     <h1>Order Management System</h1>
+//                 </header>
+
+//                 <Switch>
+//                     <Route path="/" exact component={Management} />
+                    
+//                 </Switch>
+//             </div>
+//         </Router>
+//     );
+// };
+
+// export default App;
+// import React from 'react';
+// import { BrowserRouter, Routes, Route } from 'react-router-dom';
+// import ProductPage from './ProductPage';
+
+// const App = () => {
+//   return (
+//     <BrowserRouter>
+//       <Routes>
+//         <Route path="/products/:productId" element={<ProductPage />} />
+//       </Routes>
+//     </BrowserRouter>
+//   );
+// };
+// export default App;
+
+
+// import React, { useEffect, useState } from 'react';
+// import { initGA, logEvent, logTransaction } from './Analytic'
+
+// const App = () => {
+//   const [cart, setCart] = useState([]);
+//   const [checkoutStarted, setCheckoutStarted] = useState(false);
+
+//   useEffect(() => {
+//     initGA(); // Initialize Google Analytics
+//   }, []);
+
+//   const handleAddToCart = (product) => {
+//     setCart((prevCart) => [...prevCart, product]);
+//     logEvent('Ecommerce', 'Add to Cart', product.name, product.price);
+//   };
+
+//   const handleCheckoutStart = () => {
+//     setCheckoutStarted(true);
+//     logEvent('Ecommerce', 'Checkout Started');
+//   };
+
+//   const handleCheckoutComplete = () => {
+//     const total = cart.reduce((acc, item) => acc + item.price, 0);
+//     logTransaction({
+//       id: '12345', // Unique transaction ID
+//       total,
+//       tax: 2.50,
+//       shipping: 5.00,
+//       coupon: null,
+//       items: cart,
+//     });
+//     setCart([]); // Clear cart after purchase
+//     setCheckoutStarted(false);
+//   };
+
+//   const trackCartAbandonment = () => {
+//     if (checkoutStarted) {
+//       logEvent('Ecommerce', 'Cart Abandoned', 'User left checkout without purchase');
+//     }
+//   };
+
+//   useEffect(() => {
+//     const handleBeforeUnload = () => trackCartAbandonment();
+//     window.addEventListener('beforeunload', handleBeforeUnload);
+//     return () => {
+//       window.removeEventListener('beforeunload', handleBeforeUnload);
+//     };
+//   }, [checkoutStarted]);
+
+//   return (
+//     <div>
+//       <h1>Online Store</h1>
+//       <div>
+//         <h2>Products</h2>
+//         <button onClick={() => handleAddToCart({ id: 'p1', name: 'Product 1', price: 29.99 })}>
+//           Add Product 1 ($29.99)
+//         </button>
+//         <button onClick={() => handleAddToCart({ id: 'p2', name: 'Product 2', price: 39.99 })}>
+//           Add Product 2 ($39.99)
+//         </button>
+//       </div>
+//       <div>
+//         <h2>Cart</h2>
+//         <ul>
+//           {cart.map((item, index) => (
+//             <li key={index}>{item.name} - ${item.price}</li>
+//           ))}
+//         </ul>
+//       </div>
+//       <button onClick={handleCheckoutStart} disabled={cart.length === 0}>
+//         Start Checkout
+//       </button>
+//       {checkoutStarted && (
+//         <div>
+//           <h2>Checkout</h2>
+//           <button onClick={handleCheckoutComplete}>
+//             Complete Purchase
+//           </button>
+//         </div>
+//       )}
+//     </div>
+//   );
+// };
+
+// export default App;
+// import React, { useState } from 'react';
+// import TicketForm from './TicketForm';
+
+// const App = () => {
+//   const [tickets, setTickets] = useState([]);
+
+//   const addTicket = (ticket) => {
+//     setTickets((prev) => [...prev, { ...ticket, id: Date.now() }]);
+//   };
+
+//   return (
+//     <div>
+//       <h1>Support Ticket System</h1>
+//       <TicketForm addTicket={addTicket} />
+//       <ul>
+//         {tickets.map((ticket) => (
+//           <li key={ticket.id}>
+//             <h3>{ticket.subject}</h3>
+//             <p>{ticket.description}</p>
+//           </li>
+//         ))}
+//       </ul>
+//     </div>
+//   );
+// };
+
+// export default App;
+
+// import React from 'react';
+// import ProductCatalog from './ProductCatalog';
+
+// const App = () => {
+//   return (
+//     <div className="App">
+//       <ProductCatalog />
+//     </div>
+//   );
+// };
+
+// export default App;
+// import React from 'react';
+
+// import './App.css'; 
+// import ProductCatalog1 from './ProductCatalog1';
+
+// const App = () => {
+//   return (
+//     <div className="App">
+//       <ProductCatalog1 />
+//     </div>
+//   );
+// };
+
+// export default App;
+
+// src/App.js
+// import React from 'react';
+// import Reviews from './Reviews';
+
+// const App = () => {
+//   return (
+//     <div>
+//       <h1>My Reviews App</h1>
+//       <Reviews />
+//     </div>
+//   );
+// };
+
+// export default App;
+
 import React from 'react';
-import ShoppingCart2 from './ShoppingCart2';
+import AddItem from './components/AddItem';
+import Cart3 from './components/Cart3';
 
 
-function App() {
-  return (
-    <div className="App">
-      <ShoppingCart2 />
-    </div>
-  );
-}
+const items = [
+    { id: 1, name: 'Item 1', price: 20 },
+    { id: 2, name: 'Item 2', price: 30 },
+    { id: 3, name: 'Item 3', price: 40 },
+    { id: 4, name: 'Item 4', price: 60 },
+    { id: 5, name: 'Item 5', price: 80 },
+];
+
+const App = () => {
+    return (
+        <div>
+            <h1>Shopping Cart Example</h1>
+            <div>
+                {items.map(item => (
+                    <AddItem key={item.id} item={item} />
+                ))}
+            </div>
+            <Cart3 />
+
+        </div>
+    );
+};
 
 export default App;
