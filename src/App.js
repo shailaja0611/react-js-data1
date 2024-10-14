@@ -978,32 +978,62 @@
 
 // export default App;
 
+// import React from 'react';
+// import AddItem from './components/AddItem';
+// import Cart3 from './components/Cart3';
+
+
+// const items = [
+//     { id: 1, name: 'Item 1', price: 20 },
+//     { id: 2, name: 'Item 2', price: 30 },
+//     { id: 3, name: 'Item 3', price: 40 },
+//     { id: 4, name: 'Item 4', price: 60 },
+//     { id: 5, name: 'Item 5', price: 80 },
+// ];
+
+// const App = () => {
+//     return (
+//         <div>
+//             <h1>Shopping Cart Example</h1>
+//             <div>
+//                 {items.map(item => (
+//                     <AddItem key={item.id} item={item} />
+//                 ))}
+//             </div>
+//             <Cart3 />
+
+//         </div>
+//     );
+// };
+
+// export default App;
+
+// import React from 'react';
+// import Chat from './Chat';
+
+// const App = () => {
+//     return (
+//         <div style={{ padding: '20px' }}>
+//             <h1>Customer Support Chat</h1>
+//             <Chat />
+//         </div>
+//     );
+// };
+
+// export default App;
 import React from 'react';
-import AddItem from './components/AddItem';
-import Cart3 from './components/Cart3';
+import './ReactSideBar'
 
 
-const items = [
-    { id: 1, name: 'Item 1', price: 20 },
-    { id: 2, name: 'Item 2', price: 30 },
-    { id: 3, name: 'Item 3', price: 40 },
-    { id: 4, name: 'Item 4', price: 60 },
-    { id: 5, name: 'Item 5', price: 80 },
-];
+import ReactSideBar from './ReactSideBar';
 
 const App = () => {
-    return (
-        <div>
-            <h1>Shopping Cart Example</h1>
-            <div>
-                {items.map(item => (
-                    <AddItem key={item.id} item={item} />
-                ))}
-            </div>
-            <Cart3 />
-
-        </div>
-    );
+  return (
+    <div>
+      < ReactSideBar />
+      
+    </div>
+  );
 };
 
 export default App;
