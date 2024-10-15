@@ -1021,19 +1021,157 @@
 // };
 
 // export default App;
-import React from 'react';
-import './ReactSideBar'
+// import React from 'react';
+// import './ReactSideBar'
 
 
-import ReactSideBar from './ReactSideBar';
+// import ReactSideBar from './ReactSideBar';
 
-const App = () => {
-  return (
-    <div>
-      < ReactSideBar />
+// const App = () => {
+//   return (
+//     <div>
+//       < ReactSideBar />
       
+//     </div>
+//   );
+// };
+
+// export default App;
+
+// import React from 'react';
+// import './FileDownload'
+// import { FileDownload } from '@mui/icons-material';
+// const App = () => {
+//   return (
+//     <div>
+//       < FileDownload />
+      
+//     </div>
+//   );
+// };
+
+// export default App;
+
+//  import React from 'react';
+//  import FileDownload from './FileDownload'; // Ensure this path is correct based on your project structure
+//  import './App.css'; // Your main CSS file for styling
+
+//  const App = () => {
+//   return (
+//    <div className="app-container">
+//      <header className="app-header">
+//      <h1>File Download Example</h1>
+//    </header>
+//       <main>
+//        <FileDownload />
+//    </main>
+//     <footer className="app-footer">
+//       <p>&copy; 2024 Your Company Name</p>
+//     </footer>
+//   </div>
+//   );
+//  };
+
+//  export default App;
+// import React from 'react';
+// import DataFetchingComponent from './DataFetchingComponent';
+
+
+// const App = () => {
+//   return (
+//     <div className="App">
+//       <header className="App-header">
+//         <h1>My Data Fetching App</h1>
+//       </header>
+//       <main>
+//         <DataFetchingComponent />
+//       </main>
+//     </div>
+//   );
+// };
+
+// export default App;
+// import React from 'react';
+// import TextSearchHighlight from './TextSearchHighlight';
+// import './App.css'; // Optional: For any additional styles
+
+// const App = () => {
+//   return (
+//     <div className="App">
+//       <header className="App-header">
+//         <h1>Text Search and Highlight</h1>
+//       </header>
+//       <main style={{ padding: '20px' }}>
+//         <TextSearchHighlight />
+//       </main>
+//     </div>
+//   );
+// };
+
+// export default App;
+
+// import React from 'react';
+// import NameGreeting from './NameGreeting'; // Import your NameGreeting component
+// import './App.css'; // Optional: For any additional styles
+
+// const App = () => {
+//   return (
+//     <div className="App">
+//       <header className="App-header">
+//         <h1>Simple React Greeting App</h1>
+//       </header>
+//       <main style={{ padding: '20px' }}>
+//         <NameGreeting /> {/* Use the NameGreeting component here */}
+//       </main>
+//     </div>
+//   );
+// };
+
+// export default App;
+
+// import React from 'react';
+// import TaskManager from './TaskManager'; // Adjust the path if needed
+// import './App.css'; // Optional for additional styles
+
+// const App = () => {
+//   return (
+//     <div className="App">
+//       <header style={{ textAlign: 'center', padding: '20px' }}>
+//         <h1>Task Manager</h1>
+//       </header>
+//       <TaskManager />
+//     </div>
+//   );
+// };
+
+// export default App;
+// src/App.js
+// import React from 'react';
+// import MapComponent from './MapComponent';
+
+// function App() {
+//     return (
+//         <div className="App">
+//             <h1>Map with Location Markers</h1>
+//             <MapComponent />
+//         </div>
+//     );
+// }
+
+// export default App;
+// src/App.js
+
+
+import React from 'react';
+import DataFetchComponent from './DataFetchComponent';
+
+function App() {
+  return (
+    <div className="App" style={{ padding: '20px', maxWidth: '600px', margin: '0 auto' }}>
+      <h1>My Data Fetching App</h1>
+      <DataFetchComponent />
     </div>
   );
-};
+}
 
-export default App;
+export default App;
