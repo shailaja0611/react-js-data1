@@ -1162,16 +1162,74 @@
 // src/App.js
 
 
-import React from 'react';
-import DataFetchComponent from './DataFetchComponent';
+// import React from 'react';
+// import DataFetchComponent from './DataFetchComponent';
+
+// function App() {
+//   return (
+//     <div className="App" style={{ padding: '20px', maxWidth: '600px', margin: '0 auto' }}>
+//       <h1>My Data Fetching App</h1>
+//       <DataFetchComponent />
+//     </div>
+//   );
+// }
+
+// export default App;
+// import React, { useState } from 'react';
+// import RecipeList from './RecipeList';
+// import SearchBar from './SearchBar';
+
+// const App = () => {
+//   const [recipes, setRecipes] = useState([]);
+//   const [searchTerm, setSearchTerm] = useState('');
+//   const [loading, setLoading] = useState(false);
+//   const [error, setError] = useState('');
+
+//   const fetchRecipes = async (term) => {
+//     if (!term) return; // Prevent empty searches
+//     setLoading(true);
+//     setError('');
+
+//     try {
+//       const response = await fetch(`https://api.spoonacular.com/recipes/complexSearch?query=${term}&apiKey=YOUR_API_KEY`);
+//       if (!response.ok) throw new Error('Failed to fetch recipes');
+//       const data = await response.json();
+//       setRecipes(data.results);
+//     } catch (err) {
+//       setError(err.message);
+//     } finally {
+//       setLoading(false);
+//     }
+//   };
+
+//   return (
+//     <div>
+//       <h1>Food Recipe App</h1>
+//       <SearchBar onSearch={fetchRecipes} />
+//       {loading && <p>Loading...</p>}
+//       {error && <p>Error: {error}</p>}
+//       <RecipeList recipes={recipes} />
+//     </div>
+//   );
+// };
+
+// export default App;
+
+import React, { Suspense, lazy } from 'react';
+import ReactDOM from 'react-dom';
+
+// Lazy load the Child component
+const Child = lazy(() => import('./Child'));
 
 function App() {
   return (
-    <div className="App" style={{ padding: '20px', maxWidth: '600px', margin: '0 auto' }}>
-      <h1>My Data Fetching App</h1>
-      <DataFetchComponent />
+    <div>
+      <h1>React Suspense Example</h1>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Child />
+      </Suspense>
     </div>
   );
 }
 
-export default App;
+export default App
