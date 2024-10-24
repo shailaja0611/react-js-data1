@@ -906,7 +906,7 @@ li strong {
 li p {
   margin: 0;
 }   */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -933,4 +933,145 @@ li p {
   margin-bottom: 20px;
   text-align: center;
   font-size: 40px;
+} */
+ /* src/App.css */
+
+/* body {
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
+  margin: 0;
+}
+
+h1 {
+  color: #333;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+span {
+  display: block;
+  margin-top: 10px;
+} */
+/* App.css */
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.word-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.letter {
+  font-size: 36px;
+  margin: 0 5px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.visible {
+  border-color: #4CAF50;
+  background-color: #e8f5e9;
+}
+
+.word-description {
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.message {
+  margin: 20px 0;
+  font-weight: bold;
+}
+
+.button-section {
+  margin-top: 20px;
+}
+
+.guess-section {
+  margin-bottom: 10px;
+}
+
+.restart-button,
+.remove-button,
+.hint-button,
+.guess-button {
+  padding: 10px 15px;
+  margin: 5px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #007BFF;
+  color: white;
+  font-size: 16px;
+}
+
+.restart-button:hover,
+.remove-button:hover,
+.hint-button:hover,
+.guess-button:hover {
+  background-color: #0056b3;
+}
+
+.letter-selection {
+  margin: 10px 0;
+}
+
+.letter-button {
+  padding: 10px;
+  margin: 2px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.letter-button.selected {
+  background-color: #4CAF50;
+  color: white;
+  cursor: not-allowed;
+}
+
+.letter-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.hints {
+  margin: 10px 0;
+  font-size: 18px;
 }
