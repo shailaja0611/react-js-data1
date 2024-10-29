@@ -1460,19 +1460,33 @@
 
 // export default GFGWordGame;
 
-import React from "react";
-import "./App.css";
+// import React from "react";
+// import "./App.css";
 
-import Posts from "./Posts";
-import BlogNav from "./BlogNav"
+// import Posts from "./Posts";
+// import BlogNav from "./BlogNav"
 
-const App = () => {
-    return (
-        <div className="main-container" style={{backgroundColor: "aliceblue"}}>
-            <BlogNav />
-            <Posts />
-        </div>
-    );
-};
+// const App = () => {
+//     return (
+//         <div className="main-container" style={{backgroundColor: "aliceblue"}}>
+//             <BlogNav />
+//             <Posts />
+//         </div>
+//     );
+// };
+
+// export default App;
+
+
+import React from 'react';
+import ProductList from './ProductList'
+
+
+const App = () => (
+  <div>
+    <h1> API Integration</h1>
+    <ProductList />
+  </div>
+);
 
 export default App;
