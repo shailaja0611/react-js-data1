@@ -1478,15 +1478,122 @@
 // export default App;
 
 
+// import React from 'react';
+// import ProductList from './ProductList'
+
+
+// const App = () => (
+//   <div>
+//     <h1> API Integration</h1>
+//     <ProductList />
+//   </div>
+// );
+
+// export default App;
+// import React from 'react';
+// import axios from 'axios';
+
+// export default class PostList extends React.Component {
+//   state = {
+//     posts: []
+//   };
+
+//   componentDidMount() {
+//     axios.get('https://jsonplaceholder.typicode.com/posts')
+//       .then(res => {
+//         const posts = res.data;
+//         this.setState({ posts });
+//       });
+//   }
+
+//   deleteRow(id, e) {
+//     axios.delete(`https://jsonplaceholder.typicode.com/posts/${id}`)
+//       .then(res => {
+//         console.log(res);
+//         console.log(res.data);
+
+//         const posts = this.state.posts.filter(item => item.id !== id);
+//         this.setState({ posts });
+//       });
+//   }
+
+//   render() {
+//     return (
+//       <div>
+//         <h1>Example of React Axios Delete Request</h1>
+
+//         <table className="table table-bordered">
+//           <thead>
+//             <tr>
+//               <th>ID</th>
+//               <th>Title</th>
+//               <th>Body</th>
+//               <th>Action</th>
+//             </tr>
+//           </thead>
+
+//           <tbody>
+//             {this.state.posts.map((post) => (
+//               <tr key={post.id}>
+//                 <td>{post.id}</td>
+//                 <td>{post.title}</td>
+//                 <td>{post.body}</td>
+//                 <td>
+//                   <button className="btn btn-danger" onClick={(e) => this.deleteRow(post.id, e)}>Delete</button>
+//                 </td>
+//               </tr>
+//             ))}
+//           </tbody>
+
+//         </table>
+//       </div>
+//     );
+//   }
+// }
 import React from 'react';
-import ProductList from './ProductList'
 
+function App() {
+  const students = [
+    {
+      id: 1,
+      name: 'Jack',
+      email: 'jack@gmail.com',
+    },
+    {
+      id: 2,
+      name: 'Mary',
+      email: 'mary@gmail.com',
+    },
+    {
+      id: 3,
+      name: 'John',
+      email: 'john@gmail.com',
+    },
+  ];
 
-const App = () => (
-  <div>
-    <h1> API Integration</h1>
-    <ProductList />
-  </div>
-);
+  return (
+    <div className="container">
+      <h1>Example of React Map Loop</h1>
+      <table className="table table-bordered">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          {students.map((student, index) => (
+            <tr key={student.id} data-index={index}>
+              <td>{student.id}</td>
+              <td>{student.name}</td>
+              <td>{student.email}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
 
 export default App;
