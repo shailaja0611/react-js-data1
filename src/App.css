@@ -959,7 +959,7 @@ span {
   margin-top: 10px;
 } */
 /* App.css */
-
+/* 
 body {
   font-family: 'Arial', sans-serif;
   background-color: #f4f4f4;
@@ -1074,4 +1074,32 @@ h1 {
 .hints {
   margin: 10px 0;
   font-size: 18px;
+} */
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  background-color: antiquewhite;
+}
+
+.App>h2 {
+  text-align: center;
+}
+
+.App>button {
+  width: 8rem;
+  font-size: larger;
+  padding: 2vmax auto;
+  height: 1.8rem;
+  color: white;
+  background-color: rgb(34, 34, 33);
+  border-radius: 10px;
+}
+
+button:hover {
+  background-color: rgb(80, 80, 78);
 }

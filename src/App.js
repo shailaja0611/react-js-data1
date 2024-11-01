@@ -1490,6 +1490,8 @@
 // );
 
 // export default App;
+
+
 // import React from 'react';
 // import axios from 'axios';
 
@@ -1549,51 +1551,173 @@
 //       </div>
 //     );
 //   }
+//  }
+
+
+// import React from 'react';
+
+// function App() {
+//   const students = [
+//     {
+//       id: 1,
+//       name: 'Jack',
+//       email: 'jack@gmail.com',
+//     },
+//     {
+//       id: 2,
+//       name: 'Mary',
+//       email: 'mary@gmail.com',
+//     },
+//     {
+//       id: 3,
+//       name: 'John',
+//       email: 'john@gmail.com',
+//     },
+//   ];
+
+//   return (
+//     <div className="container">
+//       <h1>Example of React Map Loop</h1>
+//       <table className="table table-bordered">
+//         <thead>
+//           <tr>
+//             <th>ID</th>
+//             <th>Name</th>
+//             <th>Email</th>
+//           </tr>
+//         </thead>
+//         <tbody>
+//           {students.map((student, index) => (
+//             <tr key={student.id} data-index={index}>
+//               <td>{student.id}</td>
+//               <td>{student.name}</td>
+//               <td>{student.email}</td>
+//             </tr>
+//           ))}
+//         </tbody>
+//       </table>
+//     </div>
+//   );
 // }
-import React from 'react';
+
+
+// import React, { Component } from 'react';  
+// import { render } from 'react-dom';  
+
+// class App extends Component {  
+//   constructor() {  
+//     super();  
+//     this.state = {  
+//       categories: [  
+//         {id: 1, value: "Angular"},  
+//         {id: 2, value: "React"},  
+//         {id: 3, value: "PHP"},  
+//         {id: 4, value: "Laravel"}  
+//       ],  
+//       checkedItems: new Map()  
+//     };  
+    
+//     this.handleChange = this.handleChange.bind(this);  
+//     this.handleSubmit = this.handleSubmit.bind(this);  
+//   }  
+
+//   handleChange(event) {  
+//     const isChecked = event.target.checked;  
+//     const itemValue = event.target.value;  
+
+//     this.setState(prevState => {  
+//       const newCheckedItems = new Map(prevState.checkedItems);  
+//       newCheckedItems.set(itemValue, isChecked);  
+//       return { checkedItems: newCheckedItems };  
+//     });  
+//   }  
+
+//   handleSubmit(event) {  
+//     event.preventDefault();  
+//     console.log(Array.from(this.state.checkedItems.entries())); 
+//   }  
+
+//   render() {  
+//     return (  
+//       <div>  
+//         <h1>Examples of Multiple Checkbox in React</h1>  
+//         <form onSubmit={this.handleSubmit}>  
+//           <ul>  
+//             {  
+//               this.state.categories.map(item => (  
+//                 <li key={item.id}>  
+//                   <label>  
+//                     <input  
+//                       type="checkbox"  
+//                       value={item.value}  
+//                       onChange={this.handleChange}  
+//                     /> {item.value}  
+//                   </label>  
+//                 </li>  
+//               ))  
+//             }  
+//           </ul>  
+//           <br/>  
+//           <input type="submit" value="Submit" />  
+//         </form>  
+//       </div>  
+//     );  
+//   }  
+// }  
+
+// export default App
+
+
+
+
+// import React, { useState } from 'react';
+// import './App.css'
+ 
+// const App = () => {
+//     const [num, setNum] = useState(0);
+//     const handleClick = () => {
+//         setNum(num + 1);
+//     };
+ 
+//     return (
+//         <div className="App">
+//             <h2> {num}</h2>
+//             <button onClick={handleClick}>
+//                 Add one
+//             </button>
+//         </div>
+//     );
+// };
+ 
+// export default App;
+
+import React, { useState } from 'react';
 
 function App() {
-  const students = [
-    {
-      id: 1,
-      name: 'Jack',
-      email: 'jack@gmail.com',
-    },
-    {
-      id: 2,
-      name: 'Mary',
-      email: 'mary@gmail.com',
-    },
-    {
-      id: 3,
-      name: 'John',
-      email: 'john@gmail.com',
-    },
-  ];
+    const [click, setClick] = useState([]);
 
-  return (
-    <div className="container">
-      <h1>Example of React Map Loop</h1>
-      <table className="table table-bordered">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Email</th>
-          </tr>
-        </thead>
-        <tbody>
-          {students.map((student, index) => (
-            <tr key={student.id} data-index={index}>
-              <td>{student.id}</td>
-              <td>{student.name}</td>
-              <td>{student.email}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  );
+    const addNumber = () => {
+        setClick([
+            ...click,
+            {
+                id: click.length,
+                value: Math.random() * 10
+            }
+        ]);
+    };
+
+    return (
+        <div>
+            <ul>
+                {click.map(item => (
+                    <li key={item.id}>{item.value}</li>
+                ))}
+            </ul>
+            <button onClick={addNumber}>
+                Click me
+            </button>
+        </div>
+    );
 }
 
 export default App;
