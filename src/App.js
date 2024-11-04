@@ -1691,33 +1691,122 @@
  
 // export default App;
 
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
 
-function App() {
-    const [click, setClick] = useState([]);
+// function App() {
+//     const [click, setClick] = useState([]);
 
-    const addNumber = () => {
-        setClick([
-            ...click,
-            {
-                id: click.length,
-                value: Math.random() * 10
-            }
-        ]);
-    };
+//     const addNumber = () => {
+//         setClick([
+//             ...click,
+//             {
+//                 id: click.length,
+//                 value: Math.random() * 10
+//             }
+//         ]);
+//     };
 
-    return (
-        <div>
-            <ul>
-                {click.map(item => (
-                    <li key={item.id}>{item.value}</li>
-                ))}
-            </ul>
-            <button onClick={addNumber}>
-                Click me
-            </button>
-        </div>
-    );
-}
+//     return (
+//         <div>
+//             <ul>
+//                 {click.map(item => (
+//                     <li key={item.id}>{item.value}</li>
+//                 ))}
+//             </ul>
+//             <button onClick={addNumber}>
+//                 Click me
+//             </button>
+//         </div>
+//     );
+// }
 
-export default App;
+// export default App;
+
+// import React from 'react';
+// import { SafeAreaView, Text } from 'react-native';
+// import ChatbotApp from './ChatbotApp';
+
+// const App = () => {
+//     return (
+//         <SafeAreaView style={{ flex: 1 }}>
+
+//             <Text
+//                 style={{
+//                     marginLeft: 23,
+//                     fontSize: 20,
+//                     marginTop: 20,
+//                     fontWeight: 'bold',
+//                     color: 'green',
+//                     backgroundColor: 'yellow',
+//                     marginRight: 30
+//                 }}>
+//                 GeekforGeeks ChatBot App</Text>
+
+//             <ChatbotApp />
+//         </SafeAreaView>
+//     );
+// };
+
+// export default App;
+
+// 
+// import React, { Component } from 'react'
+// import Result from './Result'
+
+// class App extends Component {
+ 
+//     static defaultProps = {
+//         secret: Math.floor(Math.random() * 20) + 1
+//     }
+ 
+//     constructor(props) {
+//         super(props)
+//         this.state = { term: '' }
+ 
+//         this.handleChange = this.handleChange.bind(this)
+//     }
+ 
+//     handleChange(event) {
+//         this.setState({
+//             [event.target.name]: event.target.value
+//         })
+//     }
+ 
+//     render() {
+//         return (
+//             <div className='container'>
+//                 <div className='head'>
+//                     <label htmlFor='term'>
+//                         Guess Number between 1 to 20
+//                     </label>
+//                 </div>
+//                 <input
+//                     id='term'
+//                     type='text'
+//                     name='term'
+//                     value={this.state.term}
+//                     onChange={this.handleChange}
+//                 />
+ 
+//                 <Result term={this.state.term}
+//                     secretNum={this.props.secret} />
+//             </div>
+//         )
+//     }
+// }
+// export default App
+
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import ErrorBoundary from './ErrorBoundary';
+import YourComponent from './YourComponent';
+
+const App = () => {
+  return (
+    <ErrorBoundary>
+      <YourComponent />
+    </ErrorBoundary>
+  );
+};
+export default App
