@@ -1797,16 +1797,62 @@
 // export default App
 
 
-import React from 'react';
-import ReactDOM from 'react-dom';
-import ErrorBoundary from './ErrorBoundary';
-import YourComponent from './YourComponent';
+// import React from 'react';
+// import ReactDOM from 'react-dom';
+// import ErrorBoundary from './ErrorBoundary';
+// import YourComponent from './YourComponent';
 
-const App = () => {
-  return (
-    <ErrorBoundary>
-      <YourComponent />
-    </ErrorBoundary>
-  );
-};
-export default App
+// const App = () => {
+//   return (
+//     <ErrorBoundary>
+//       <YourComponent />
+//     </ErrorBoundary>
+//   );
+// };
+// export default App
+
+// import React from 'react';
+// import ProductList from './ProductList'
+
+
+
+// const App = () => (
+//   <div>
+//     <h1> API Integration</h1>
+//     <ProductList />
+
+    
+//   </div>
+// );
+
+// export default App;
+
+// import React from 'react';
+// // import FetchDataComponent from './FetchDataComponent';  
+
+// const App = () => {
+//   return (
+//     <div className='App'
+//       // {/* <h1>React App with Fetch Data</h1>
+//       // <FetchDataComponent />   */}
+
+//     </div>
+//   );
+// }
+
+// export default App;
+
+
+import React from "react";
+import "./App.css"; 
+import GameBoard from "./GameBoard";
+
+function App() { 
+    return ( 
+        <div className="App"> 
+            <GameBoard />
+        </div> 
+    ); 
+} 
+  
+export default App; 
