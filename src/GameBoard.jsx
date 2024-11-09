@@ -16,7 +16,7 @@ function GameBoard() {
             setCardsArray(randomOrderArray); 
             setMoves(0); 
             setFirstCard(null); 
-            setSecondCard(null); 
+            setSecondCard(null);  
             setWon(0); 
         }, 1200); 
     } 
