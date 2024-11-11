@@ -1149,7 +1149,7 @@ h1 {
     width: 200px; 
     font-size: 1.2rem; 
     font-weight: bolder; 
-    border-radius: 0.7rem; 
+    /* border-radius: 0.7rem; 
     border-style: none; 
     background-color: red; 
     color: white; 
@@ -1217,7 +1217,7 @@ CSS for Card component
     transform: rotateY(90deg); 
     transition-delay: 0s; 
 } */ 
-body {
+/* body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
@@ -1242,7 +1242,7 @@ body {
 }
 
 /* Search Component */
-.search-bar {
+/* .search-bar {
   width: 100%;
   max-width: 400px;
   margin: 0 auto;
@@ -1272,10 +1272,10 @@ body {
 .search-icon {
   font-size: 1.2rem;
   margin-right: 10px;
-  color: #6cc24a;
-}
+  color: #6cc24a; */
+/* } */
 
-/* Product Display */
+
 .product-list {
   flex: 2;
   display: flex;
@@ -1328,7 +1328,7 @@ body {
   font-size: 1.1rem;
   color: #777;
   margin: 5px 0;
-}
+} */
 
 /* Cart Checkout */
 .cart {
@@ -1509,7 +1509,8 @@ body {
 
 .item-info {
   display: flex;
-  flex-direction: row;
+  /* flex-direction: row; */
+  flex-wrap: wrap;
 }
 
 .item-details {
@@ -1536,4 +1537,98 @@ body {
 
 .checkout-section .checkout-button:hover {
   background-color: #4c5cb6;
+} 
+
+/* General Styles */
+.app-container {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 20px;
+  transition: background 0.3s ease, color 0.3s ease;
 }
+
+/* Light theme */
+.app-container.light {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+/* Dark theme */
+.app-container.dark {
+  background-color: #333;
+  color: #f5f5f5;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.theme-toggle-button {
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  background-color: #007BFF;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.theme-toggle-button:hover {
+  background-color: #0056b3;
+}
+
+/* Section */
+.section {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.update-button, .counter-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  background-color: #28a745;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.update-button:hover, .counter-button:hover {
+  background-color: #218838;
+}
+
+/* Measuring Div */
+.measuring-div {
+  width: 50%;
+  height: 100px;
+  background: #ddd;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+/* Example CSS for Lazy-Loading */
+.lazy-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: opacity 0.5s ease-in-out;
+  opacity: 0.7;
+}
+
+.lazy-image[src]:not([src="https://ibb.co/cg1B4D3text=Loading..."]) {
+  opacity: 1;
+}
+
+.lazy-load-content {
+  transition: opacity 1s ease-in-out;
+}
+
+

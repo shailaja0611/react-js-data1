@@ -1858,95 +1858,442 @@
 // export default App; 
 
 
-import React, { useState } from 'react';
-import './App.css';
-import SearchComponent from './SearchComponent';
-import ShowCourseComponent from './ShowCourseComponent';
-import UserCartComponent from './UserCartComponent'
+// import React, { useState } from 'react';
+// import './App.css';
+// import SearchComponent from './SearchComponent';
+// import ShowCourseComponent from './ShowCourseComponent';
+// import UserCartComponent from './UserCartComponent'
 
-function App() {
-    const [courses, setCourses] = useState([
-        { id: 1, 
-        name: 'GFG T-shirt', 
-        price: 499, 
-        image: 
-'https://media.geeksforgeeks.org/wp-content/uploads/20230823165506/gfg1.png'
-        },
-        { id: 2, 
-        name: 'GFG Bag', 
-        price: 699, 
-        image: 
-'https://media.geeksforgeeks.org/wp-content/uploads/20230823165553/gfg2.jpg'
-        },
-        { id: 3, 
-        name: 'GFG Hoodie', 
-        price: 799, 
-        image: 
-'https://media.geeksforgeeks.org/wp-content/uploads/20230823165623/gfg3.jpg'
+// function App() {
+//     const [courses, setCourses] = useState([
+//         { id: 1, 
+//         name: 'GFG T-shirt', 
+//         price: 499, 
+//         image: 
+// 'https://media.geeksforgeeks.org/wp-content/uploads/20230823165506/gfg1.png'
+//         },
+//         { id: 2, 
+//         name: 'GFG Bag', 
+//         price: 699, 
+//         image: 
+// 'https://media.geeksforgeeks.org/wp-content/uploads/20230823165553/gfg2.jpg'
+//         },
+//         { id: 3, 
+//         name: 'GFG Hoodie', 
+//         price: 799, 
+//         image: 
+// 'https://media.geeksforgeeks.org/wp-content/uploads/20230823165623/gfg3.jpg'
+//         },
+//         { 
+//             id: 4, 
+//             name: 'GFG Mug', 
+//             price: 299, 
+//             image: 'https://media.geeksforgeeks.org/wp-content/uploads/20230823170001/gfg4.jpg',
+//             description: 'A ceramic mug to enjoy your favorite drinks.'
+//         },
+//         { 
+//             id: 5, 
+//             name: 'GFG Notebook', 
+//             price: 199, 
+//             image: 'https://media.geeksforgeeks.org/wp-content/uploads/20230823170045/gfg5.jpg',
+//             description: 'A high-quality notebook for your notes and ideas.'
+//         },
+//         { 
+//             id: 6, 
+//             name: 'GFG Cap', 
+//             price: 399, 
+//             image: 'https://media.geeksforgeeks.org/wp-content/uploads/20230823170112/gfg6.jpg',
+//             description: 'A cool cap with the GFG logo for sunny days.'
+//         }
+//     ]);
+
+//     const [cartCourses, setCartCourses] = useState([]);
+//     const [searchCourse, setSearchCourse] = useState('');
+
+//     const addCourseToCartFunction = (GFGcourse) => {
+//         const alreadyCourses = cartCourses
+//                             .find(item => item.product.id === GFGcourse.id);
+//         if (alreadyCourses) {
+//             const latestCartUpdate = cartCourses.map(item =>
+//                 item.product.id === GFGcourse.id ? { 
+//                 ...item, quantity: item.quantity + 1 } 
+//                 : item
+//             );
+//             setCartCourses(latestCartUpdate);
+//         } else {
+//             setCartCourses([...cartCourses, {product: GFGcourse, quantity: 1}]);
+//         }
+//     };
+
+//     const deleteCourseFromCartFunction = (GFGCourse) => {
+//         const updatedCart = cartCourses
+//                             .filter(item => item.product.id !== GFGCourse.id);
+//         setCartCourses(updatedCart);
+//     };
+
+//     const totalAmountCalculationFunction = () => {
+//         return cartCourses
+//             .reduce((total, item) => 
+//                         total + item.product.price * item.quantity, 0);
+//     };
+
+//     const courseSearchUserFunction = (event) => {
+//         setSearchCourse(event.target.value);
+//     };
+
+//     const filterCourseFunction = courses.filter((course) =>
+//         course.name.toLowerCase().includes(searchCourse.toLowerCase())
+//     );
+
+//     return (
+//         <div className="App">
+//             <SearchComponent searchCourse={searchCourse} 
+//                             courseSearchUserFunction=
+//                                 {courseSearchUserFunction} />
+//             <main className="App-main">
+//                 <ShowCourseComponent
+//                     courses={courses}
+//                     filterCourseFunction={filterCourseFunction}
+//                     addCourseToCartFunction={addCourseToCartFunction}
+//                 />
+
+//                 <UserCartComponent
+//                     cartCourses={cartCourses}
+//                     deleteCourseFromCartFunction={deleteCourseFromCartFunction}
+//                     totalAmountCalculationFunction={
+//                         totalAmountCalculationFunction
+//                     }
+//                     setCartCourses={setCartCourses}
+//                 />
+//             </main>
+//         </div>
+//     );
+// }
+
+// export default App;
+
+
+// import React, { useState, useEffect, useReducer, useContext, useLayoutEffect, useRef } from 'react';
+// import './App.css'
+
+// // ---- Context Setup for Theme ----
+// const ThemeContext = React.createContext();
+
+// // ThemeProvider component to provide the theme value
+// function ThemeProvider({ children }) {
+//   const [theme, setTheme] = useState('light');
+
+//   const toggleTheme = () => setTheme(prevTheme => (prevTheme === 'light' ? 'dark' : 'light'));
+
+//   return (
+//     <ThemeContext.Provider value={{ theme, toggleTheme }}>
+//       {children}
+//     </ThemeContext.Provider>
+//   );
+// }
+
+// // ---- useReducer Setup for Counter ----
+// const initialState = { count: 0 };
+
+// function counterReducer(state, action) {
+//   switch (action.type) {
+//     case 'increment':
+//       return { count: state.count + 1 };
+//     case 'decrement':
+//       return { count: state.count - 1 };
+//     default:
+//       return state;
+//   }
+// }
+
+// // ---- Main Component ----
+// function Example() {
+//   // useState with object
+//   const [user, setUser] = useState({ name: 'Alice', age: 30 });
+
+//   // useState with array
+//   const [items, setItems] = useState([1, 2, 3]);
+
+//   // useReducer for count
+//   const [state, dispatch] = useReducer(counterReducer, initialState);
+
+//   // useContext for theme
+//   const { theme, toggleTheme } = useContext(ThemeContext);
+
+//   // useLayoutEffect to measure width of an element
+//   const divRef = useRef(null);
+//   const [width, setWidth] = useState(0);
+
+//   useLayoutEffect(() => {
+//     if (divRef.current) {
+//       setWidth(divRef.current.offsetWidth);
+//     }
+//   }, []);
+
+//   // useEffect to log whenever user name or count changes
+//   useEffect(() => {
+//     console.log(`User name is: ${user.name}`);
+//   }, [user.name]);
+
+//   useEffect(() => {
+//     console.log(`Count changed to: ${state.count}`);
+//   }, [state.count]);
+
+//   // Handlers for user and items
+//   const updateUser = () => setUser(prevUser => ({ ...prevUser, name: 'shailu' }));
+//   const addItem = () => setItems(prevItems => [...prevItems, items.length + 1]);
+
+//   return (
+//     <div style={{ background: theme === 'light' ? '#fff' : '#333', color: theme === 'light' ? '#000' : '#fff' }}>
+//       <h1>Theme: {theme}</h1>
+//       <button onClick={toggleTheme}>Toggle Theme</button>
+
+//       <hr />
+
+//       <h2>User Info: {user.name}, Age: {user.age}</h2>
+//       <button onClick={updateUser}>Update User Name</button>
+
+//       <hr />
+
+//       <h3>Items: {items.join(', ')}</h3>
+//       <button onClick={addItem}>Add Item</button>
+
+//       <hr />
+
+//       <h4>Count: {state.count}</h4>
+//       <button onClick={() => dispatch({ type: 'increment' })}>Increment</button>
+//       <button onClick={() => dispatch({ type: 'decrement' })}>Decrement</button>
+
+//       <hr />
+
+//       <div ref={divRef} style={{ width: '50%', height: '100px', background: 'lightgrey' }}>
+//         <h5>Div Width: {width}px</h5>
+//       </div>
+//     </div>
+//   );
+// }
+
+// // ---- App Component that uses ThemeProvider ----
+// function App() {
+//   return (
+//     <ThemeProvider>
+//       <Example />
+//     </ThemeProvider>
+//   );
+// }
+
+// export default App;
+
+
+// import React, { useState, useEffect, useReducer, useContext, useLayoutEffect, useRef } from 'react';
+// import './App.css';
+
+// // ---- Context Setup for Theme ----
+// const ThemeContext = React.createContext();
+
+// // ThemeProvider component to provide the theme value
+// function ThemeProvider({ children }) {
+//   const [theme, setTheme] = useState('light');
+
+//   const toggleTheme = () => setTheme(prevTheme => (prevTheme === 'light' ? 'dark' : 'light'));
+
+//   return (
+//     <ThemeContext.Provider value={{ theme, toggleTheme }}>
+//       {children}
+//     </ThemeContext.Provider>
+//   );
+// }
+
+// // ---- useReducer Setup for Counter ----
+// const initialState = { count: 0 };
+
+// function counterReducer(state, action) {
+//   switch (action.type) {
+//     case 'increment':
+//       return { count: state.count + 1 };
+//     case 'decrement':
+//       return { count: state.count - 1 };
+//     default:
+//       return state;
+//   }
+// }
+
+// // ---- Main Component ----
+// function Example() {
+//   // useState with object for user info
+//   const [user, setUser] = useState({ name: 'Alice', age: 30 });
+
+//   // useState with array for items
+//   const [items, setItems] = useState([1, 2, 3]);
+
+//   // useReducer for counter
+//   const [state, dispatch] = useReducer(counterReducer, initialState);
+
+//   // useContext for theme
+//   const { theme, toggleTheme } = useContext(ThemeContext);
+
+//   // useLayoutEffect to measure width of an element
+//   const divRef = useRef(null);
+//   const [width, setWidth] = useState(0);
+
+//   useLayoutEffect(() => {
+//     if (divRef.current) {
+//       setWidth(divRef.current.offsetWidth);
+//     }
+//   }, []);
+
+//   // useEffect to log whenever user name or count changes
+//   useEffect(() => {
+//     console.log(`User name is: ${user.name}`);
+//   }, [user.name]);
+
+//   useEffect(() => {
+//     console.log(`Count changed to: ${state.count}`);
+//   }, [state.count]);
+
+//   // Handlers for user and items
+//   const updateUser = () => setUser(prevUser => ({ ...prevUser, name: 'Shailu' }));
+//   const addItem = () => setItems(prevItems => [...prevItems, items.length + 1]);
+
+//   return (
+//     <div style={{ background: theme === 'light' ? '#fff' : '#333', color: theme === 'light' ? '#000' : '#fff' }}>
+//       <h1>Theme: {theme}</h1>
+//       <button onClick={toggleTheme}>Toggle Theme</button>
+
+//       <hr />
+
+//       <h2>User Info: {user.name}, Age: {user.age}</h2>
+//       <button onClick={updateUser}>Update User Name</button>
+
+//       <hr />
+
+//       <h3>Items: {items.join(', ')}</h3>
+//       <button onClick={addItem}>Add Item</button>
+
+//       <hr />
+
+//       <h4>Count: {state.count}</h4>
+//       <button onClick={() => dispatch({ type: 'increment' })}>Increment</button>
+//       <button onClick={() => dispatch({ type: 'decrement' })}>Decrement</button>
+
+//       <hr />
+
+//       <div ref={divRef} style={{ width: '50%', height: '100px', background: 'lightgrey' }}>
+//         <h5>Div Width: {width}px</h5>
+//       </div>
+//     </div>
+//   );
+// }
+
+// // ---- App Component that uses ThemeProvider ----
+// function App() {
+//   return (
+//     <ThemeProvider>
+//       <Example />
+//     </ThemeProvider>
+//   );
+// }
+
+// export default App;
+
+import React, { useEffect, useState, useRef } from "react";
+import './App.css'
+
+
+const LazyLoadImage = ({ src, alt, placeholder, className }) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const imgRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect(); 
         }
-    ]);
-
-    const [cartCourses, setCartCourses] = useState([]);
-    const [searchCourse, setSearchCourse] = useState('');
-
-    const addCourseToCartFunction = (GFGcourse) => {
-        const alreadyCourses = cartCourses
-                            .find(item => item.product.id === GFGcourse.id);
-        if (alreadyCourses) {
-            const latestCartUpdate = cartCourses.map(item =>
-                item.product.id === GFGcourse.id ? { 
-                ...item, quantity: item.quantity + 1 } 
-                : item
-            );
-            setCartCourses(latestCartUpdate);
-        } else {
-            setCartCourses([...cartCourses, {product: GFGcourse, quantity: 1}]);
-        }
-    };
-
-    const deleteCourseFromCartFunction = (GFGCourse) => {
-        const updatedCart = cartCourses
-                            .filter(item => item.product.id !== GFGCourse.id);
-        setCartCourses(updatedCart);
-    };
-
-    const totalAmountCalculationFunction = () => {
-        return cartCourses
-            .reduce((total, item) => 
-                        total + item.product.price * item.quantity, 0);
-    };
-
-    const courseSearchUserFunction = (event) => {
-        setSearchCourse(event.target.value);
-    };
-
-    const filterCourseFunction = courses.filter((course) =>
-        course.name.toLowerCase().includes(searchCourse.toLowerCase())
+      },
+      { threshold: 0.1 } 
     );
 
-    return (
-        <div className="App">
-            <SearchComponent searchCourse={searchCourse} 
-                            courseSearchUserFunction=
-                                {courseSearchUserFunction} />
-            <main className="App-main">
-                <ShowCourseComponent
-                    courses={courses}
-                    filterCourseFunction={filterCourseFunction}
-                    addCourseToCartFunction={addCourseToCartFunction}
-                />
+    if (imgRef.current) {
+      observer.observe(imgRef.current);
+    }
 
-                <UserCartComponent
-                    cartCourses={cartCourses}
-                    deleteCourseFromCartFunction={deleteCourseFromCartFunction}
-                    totalAmountCalculationFunction={
-                        totalAmountCalculationFunction
-                    }
-                    setCartCourses={setCartCourses}
-                />
-            </main>
-        </div>
+    return () => observer.disconnect(); 
+  }, []);
+
+  return (
+    <img
+      ref={imgRef}
+      src={isVisible ? src : placeholder}
+      alt={alt}
+      className={className}
+    />
+  );
+};
+
+// LazyLoadContent Component
+const LazyLoadContent = ({ children }) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const contentRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect(); 
+        }
+      },
+      { threshold: 0.1 }
     );
-}
+
+    if (contentRef.current) {
+      observer.observe(contentRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div ref={contentRef} style={{ display: isVisible ? "block" : "none" }}>
+      {isVisible && children}
+    </div>
+  );
+};
+
+
+const App = () => {
+  return (
+    <div>
+      <div style={{ height: "500px" }}>
+        <h2>Lazy Loading in React</h2>
+        <p>Scroll down to see images and content load lazily.</p>
+      </div>
+
+      <div style={{ height: "500px" }}>
+        {/* Lazy Load Image */}
+        <LazyLoadImage
+          src="https://ibb.co/cg1B4D3"
+          alt=""
+          placeholder="https://ibb.co/zPXFdk7"
+          className="lazy-image"
+        />
+      </div>
+
+      <div style={{ height: "500px" }}>
+        {/* Lazy Load Content */}
+        <LazyLoadContent>
+          <h3>Lazy Loaded Content</h3>
+          <p>This content is loaded when it enters the viewport!</p>
+        </LazyLoadContent>
+      </div>
+
+      <div style={{ height: "500px" }}>
+        <p>More content down here. Keep scrolling...</p>
+      </div>
+    </div>
+  );
+};
 
 export default App;
